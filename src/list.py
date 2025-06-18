@@ -40,14 +40,27 @@ class List:
         # CASO 2: A lista já tem elementos. É preciso encontrar o último.
         last = self.first
         # O laço avança na lista até que 'last.next' seja None, indicando que 'last' é o último nó.
-        while last.next:
+        while (last.next != None):
             last = last.next
             
         # O 'next' do antigo último nó agora aponta para o novo nó.
         last.next = new_node
         
+    # remover elemento (nó) do fim da lista
+    # def removeToEnd(self, value):
+    #     aux = self.first
+    #     if(aux != None):
+    #     #se nao for vazio JA TEM ELEMENTO
+    #         while(aux.first != None):
+    #         aux = aux.first
+    #         #neste ponto o aux aponta para o ultimo elemento
+    #         aux.first = self.criarNovoElemento(valorQualquer)
+    #     else:
+    #     # NAO TEM ELEMENTO
+    #     self.first = self.criarNovoElemento(valorQualquer)
+        
     #contador de elementos
-    def counterList(self):
+    def lengthList(self):
         # Se a lista não tem um primeiro elemento (nó), ela tem 0 elementos.
         if self.first is None:
             return 0
@@ -93,16 +106,16 @@ newList.addToEnd(30)
 newList.printList() # Saída esperada: -> 10 -> 20 -> 30
 
 # Teste 2: Contar os elementos da lista.
-print(f"Quantidade de elementos na lista: {newList.counterList()}") # Saída esperada: 3
+print(f"Quantidade de elementos na lista: {newList.lengthList()}") # Saída esperada: 3
 
 # Teste 3: Adicionar um elemento (nó) no início.
 print("\n2. Adicionando 99 ao início:")
 newList.addBegin(99)
 newList.printList() # Saída esperada: -> 99 -> 10 -> 20 -> 30
-print(f"Nova quantidade de elementos: {newList.counterList()}") # Saída esperada: 4
+print(f"Nova quantidade de elementos: {newList.lengthList()}") # Saída esperada: 4
 
 # Teste 4: Operações em uma lista vazia.
 print("\n3. Testando uma lista vazia:")
 otherList = List()
 otherList.printList() # Saída esperada: A lista está vazia
-print(f"Quantidade de elementos na outra lista: {otherList.counterList()}") # Saída esperada: 0
+print(f"Quantidade de elementos na outra lista: {otherList.lengthList()}") # Saída esperada: 0
