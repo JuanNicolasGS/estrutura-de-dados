@@ -168,7 +168,7 @@ class Lista:
             contador += 1
             aux = aux.proximo
         return contador
-    
+        
 if __name__ == "__main__":
     lista = Lista()
     Menu()
